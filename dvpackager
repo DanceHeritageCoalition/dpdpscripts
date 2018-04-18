@@ -1,0 +1,6 @@
+#!/bin/bash
+while [ "${*}" != "" ] ; do
+    input="$1"
+    makelossless -j "${input}" && makeprores "${input}" && makeaccess "${input}" && makeframes "${input}" && makemetadata "${input}" && checksumpackage "${input}"
+    shift
+done
